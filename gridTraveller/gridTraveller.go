@@ -1,6 +1,8 @@
 package gridTraveller
 
-import "strconv"
+import (
+	"strconv"
+)
 
 func CalcPaths(m int, n int, x ...*map[string]int) int {
 
