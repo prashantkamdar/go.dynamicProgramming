@@ -13,6 +13,7 @@ func CalcFib(num int, x ...*map[int]int) int {
 		//fmt.Println(val)
 		return val
 	}
+
 	if num <= 2 {
 		return 1
 	}
