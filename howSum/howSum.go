@@ -1,6 +1,9 @@
 package howSum
 
-import "fmt"
+import (
+	"fmt"
+	"reflect"
+)
 
 func HowSummable(num int, arrNums []int) *[]int {
 
@@ -18,8 +21,9 @@ func HowSummable(num int, arrNums []int) *[]int {
 		//fmt.Println(remainder)
 
 		x := HowSummable(remainder, arrNums)
+		fmt.Println(reflect.TypeOf(x))
 		if x != nil {
-			fmt.Println(x)
+			fmt.Println(*x)
 			//fmt.Println(reflect.TypeOf(x))
 			return x
 		}
