@@ -1,9 +1,11 @@
 package howSum
 
-func HowSummable(num int, arrNums []int) []int {
+import "fmt"
+
+func HowSummable(num int, arrNums []int) *[]int {
 
 	if num == 0 {
-		return []int{}
+		return &[]int{}
 	}
 
 	if num <= 0 {
@@ -17,7 +19,7 @@ func HowSummable(num int, arrNums []int) []int {
 
 		x := HowSummable(remainder, arrNums)
 		if x != nil {
-			//fmt.Println(x)
+			fmt.Println(x)
 			//fmt.Println(reflect.TypeOf(x))
 			return x
 		}

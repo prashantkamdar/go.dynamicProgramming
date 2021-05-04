@@ -6,11 +6,9 @@ func CalcFib(num int, x ...*map[int]int) int {
 
 	if len(x) != 0 {
 		fibSeries = *x[0]
-		//fmt.Println(*x[0])
 	}
 
 	if val, ok := fibSeries[num]; ok {
-		//fmt.Println(val)
 		return val
 	}
 
