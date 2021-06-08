@@ -17,5 +17,9 @@ func main() {
 
 	fmt.Println(canSum.Summable(300, []int{7, 14}))
 
-	fmt.Println(howSum.HowSummable(7, []int{4, 3}))
+	fmt.Println(howSum.HowSummable(7, []int{2, 3}))
+	fmt.Println(howSum.HowSummable(7, []int{5, 3, 4, 7}))
+	fmt.Println(howSum.HowSummable(7, []int{2, 4}))
+	fmt.Println(howSum.HowSummable(8, []int{2, 3, 5}))
+	fmt.Println(howSum.HowSummable(300, []int{7, 14}))
 }
