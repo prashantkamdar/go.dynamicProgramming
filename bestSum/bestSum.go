@@ -1,6 +1,16 @@
 package bestSum
 
-func BestSummable(num int, arrNums []int) []int {
+func BestSummable(num int, arrNums []int, x ...*map[int][]int) []int {
+
+	memoBestSum := make(map[int][]int)
+
+	if len(x) != 0 {
+		memoBestSum = *x[0]
+	}
+
+	if val, ok := memoBestSum[num]; ok {
+		return val
+	}
 
 	if num == 0 {
 		return []int{}
@@ -14,7 +24,7 @@ func BestSummable(num int, arrNums []int) []int {
 
 	for _, ele := range arrNums {
 		remainder := num - ele
-		y := BestSummable(remainder, arrNums)
+		y := BestSummable(remainder, arrNums, &memoBestSum)
 
 		if y != nil {
 			y = append(y, ele)
@@ -24,5 +34,6 @@ func BestSummable(num int, arrNums []int) []int {
 		}
 	}
 
-	return bestSum
+	memoBestSum[num] = bestSum
+	return memoBestSum[num]
 }
