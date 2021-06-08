@@ -1,6 +1,6 @@
 package canSum
 
-func Summable(num int, arrNums []int, x ...*map[int]bool) bool {
+func CanSummable(num int, arrNums []int, x ...*map[int]bool) bool {
 
 	canSum := make(map[int]bool)
 
@@ -22,7 +22,7 @@ func Summable(num int, arrNums []int, x ...*map[int]bool) bool {
 
 	for _, ele := range arrNums {
 		remainder := num - ele
-		if Summable(remainder, arrNums, &canSum) {
+		if CanSummable(remainder, arrNums, &canSum) {
 			canSum[num] = true
 			return canSum[num]
 		}
