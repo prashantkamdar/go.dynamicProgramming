@@ -32,6 +32,6 @@ func main() {
 	fmt.Println("")
 
 	fmt.Println("Best Sum")
-	fmt.Println(bestSum.BestSummable(10, []int{2, 3}))
+	fmt.Println(bestSum.BestSummable(8, []int{3, 1, 2}))
 	fmt.Println("")
 }
