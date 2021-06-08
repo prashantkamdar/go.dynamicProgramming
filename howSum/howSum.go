@@ -1,6 +1,16 @@
 package howSum
 
-func HowSummable(num int, arrNums []int, x ...*[]int) []int {
+func HowSummable(num int, arrNums []int, x ...*map[int][]int) []int {
+
+	howSum := make(map[int][]int)
+
+	if len(x) != 0 {
+		howSum = *x[0]
+	}
+
+	if val, ok := howSum[num]; ok {
+		return val
+	}
 
 	if num == 0 {
 		return []int{}
@@ -13,13 +23,15 @@ func HowSummable(num int, arrNums []int, x ...*[]int) []int {
 	for _, ele := range arrNums {
 
 		remainder := num - ele
-		y := HowSummable(remainder, arrNums)
+		y := HowSummable(remainder, arrNums, &howSum)
 		if y != nil {
 			y = append(y, ele)
-			return y
+			howSum[num] = y
+			return howSum[num]
 		}
 	}
 
-	return nil
+	howSum[num] = nil
+	return howSum[num]
 
 }
